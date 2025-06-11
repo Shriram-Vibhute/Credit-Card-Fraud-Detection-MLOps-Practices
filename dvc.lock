@@ -13,14 +13,14 @@ stages:
       size: 4383
     params:
       params.yaml:
-        make_dataset.seed: 42
-        make_dataset.test_split: 0.25
+        make_dataset.seed: 43
+        make_dataset.test_split: 0.2
     outs:
     - path: .\data\interim\test.csv
       hash: md5
-      md5: fcb132f2162bd276d41bb4fea366729c
-      size: 37775718
+      md5: 220986e0a62f44f68484b68320f35a70
+      size: 30219500
     - path: .\data\interim\train.csv
       hash: md5
-      md5: 23ed89313953d9f981ebfa4a99fdbc21
-      size: 113326809
+      md5: 54375fe1cdd434fd4f276fde126a6b9f
+      size: 120883027
