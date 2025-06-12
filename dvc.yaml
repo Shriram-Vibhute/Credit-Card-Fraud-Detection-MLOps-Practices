@@ -13,15 +13,15 @@ stages:
       - .\data\interim\test.csv
 
 
-#   build_features:
-#     cmd: python .\src\features\build_features.py .\data\processed\
-#     deps:
-#       - .\data\interim\train.csv
-#       - .\data\interim\test.csv
-#       - .\src\features\build_features.py
-#     outs:
-#       - .\data\processed\train.csv
-#       - .\data\processed\test.csv
+  build_features:
+    cmd: python .\src\features\build_features.py .\data\processed\
+    deps:
+      - .\data\interim\train.csv
+      - .\data\interim\test.csv
+      - .\src\features\build_features.py
+    outs:
+      - .\data\processed\train.csv
+      - .\data\processed\test.csv
 
 #   train_model:
 #     cmd: python .\src\models\train_model.py .\data\processed\
