@@ -135,9 +135,10 @@ class CreditCardFraudVisualizer:
         )
 
         # DVC Logging - Precision Recall Curve
-        live.log_sklearn_plot(
-            "precision_recall", y, predictions = predictions, name=f"prc/{split}", drop_intermediate=True,
-        )
+        try:
+            live.log_sklearn_plot("precision_recall", y, predictions, name=f"prc/{split}")
+        except Exception as e:
+            print(f"Warning: Could not log precision-recall curve for {split}: {e}")
 
         # DVC Logging - Confusion Matrix
         live.log_sklearn_plot(

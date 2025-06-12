@@ -4,5 +4,5 @@ make_dataset:
 
 train_model:
   seed: 42
-  n_estimators: 20
+  n_estimators: 11
   max_depth: 15
