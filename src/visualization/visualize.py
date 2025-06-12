@@ -136,7 +136,7 @@ class CreditCardFraudVisualizer:
 
         # DVC Logging - Precision Recall Curve
         live.log_sklearn_plot(
-            "precision_recall", y, predictions, name=f"prc/{split}", drop_intermediate=True,
+            "precision_recall", y, predictions = predictions, name=f"prc/{split}", drop_intermediate=True,
         )
 
         # DVC Logging - Confusion Matrix
