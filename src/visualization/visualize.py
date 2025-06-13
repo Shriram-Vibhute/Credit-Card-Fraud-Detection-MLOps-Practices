@@ -129,6 +129,17 @@ class CreditCardFraudVisualizer:
         live.summary['avg_prec'][split] = avg_prec
         live.summary['roc_auc'][split] = roc_auc
 
+        # Log Artifacts - we already did this there is no any artifacts
+        # live.log_artifact(path = self.model_path, type = "model", name = "model.joblib")
+
+        # Log Matrics - Creats .tsv file to store the metrics
+        live.log_metric("split/avg_prec", avg_prec)
+        live.log_metric("split/roc_auc", roc_auc)
+
+        # Log Params - This will create params.yaml file 
+        live.log_param("lr", 1e-3)
+        live.log_param("n_iter", 50)
+
         # DVC logging - ROC curve
         live.log_sklearn_plot(
             "roc", y, predictions, name=f"roc/{split}"
